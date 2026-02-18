@@ -1,58 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Cervezalunar</title>
 <meta charset="UTF-8">
 <title>Cervezalunar</title>
 
 <style>
+body {
+  background:#0e0e0e;
+  color:white;
+  text-align:center;
+  font-family:Arial, sans-serif;
+  padding:40px;
+}
+
 .gallery {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .gallery img {
   width: 250px;
   border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+a {
+  color:#c9a227;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 </style>
-
 </head>
-
-<body style="background:#0e0e0e; color:white; text-align:center; font-family:Arial; padding:40px;">
-
-</head >
+<body>
 
 <h1>CERVEZALUNAR</h1>
 <p>Digital Artist • Nature Photographer • Steampunk Worlds</p>
 
+<section>
+  <h2>Portfolio</h2>
+  <div class="gallery">
+    <a href="https://www.redbubble.com/i/sticker/ID1" target="_blank">
+      <img src="ССЫЛКА_НА_КАРТИНКУ1" alt="Artwork 1">
+    </a>
+    <a href="https://www.redbubble.com/i/sticker/ID2" target="_blank">
+      <img src="ССЫЛКА_НА_КАРТИНКУ2" alt="Artwork 2">
+    </a>
+  </div>
+</section>
 
-<h2>Portfolio</h2>
-
-
-
-<div class="gallery">
-  <a href="https://www.redbubble.com/i/sticker/ID1" target="_blank">
-    <img src="ССЫЛКА_НА_КАРТИНКУ1" alt="Artwork 1">
+<section>
+  <h2>Shop</h2>
+  <a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank">
+    Visit My Redbubble Shop
   </a>
-
-  <a href="https://www.redbubble.com/i/sticker/ID2" target="_blank">
-    <img src="ССЫЛКА_НА_КАРТИНКУ2" alt="Artwork 2">
-  </a>
-</div>
-
-
-<h2>Shop</h2>
-<a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank" style="color:#c9a227;">
-Visit My Redbubble Shop
-</a>
+</section>
 
 </body>
 </html>
+
