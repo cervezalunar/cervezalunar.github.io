@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>Cervezalunar</title>
 
+<!-- Готический шрифт -->
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
 <style>
 body {
   background:#0e0e0e;
@@ -13,49 +16,106 @@ body {
   padding:40px;
 }
 
+h1 {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 60px;
+  color: #c9a227;
+  text-shadow: 0 0 10px #c9a227;
+}
+
+section {
+  margin-top: 50px;
+}
+
 .gallery {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 20px;
 }
 
-.gallery img {
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 250px;
+}
+
+.gallery-item img {
+  width: 100%;
+  max-width: 90vw;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-.gallery img:hover {
+.gallery-item img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px #c9a227, 0 10px 30px rgba(255,255,255,0.1);
+}
+
+.gallery-item span {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #c9a227;
 }
 
 a {
   color:#c9a227;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
+
 a:hover {
+  color: #fff;
   text-decoration: underline;
+}
+
+#rb-portfolio-container {
+  margin-top: 30px;
 }
 </style>
 </head>
+
 <body>
 
 <h1>CERVEZALUNAR</h1>
 <p>Digital Artist • Nature Photographer • Steampunk Worlds</p>
 
+<!-- Секция с безопасной галереей -->
 <section>
-  <h2>Portfolio</h2>
+  <h2>Portfolio (Safe View)</h2>
   <div class="gallery">
-    <a href="https://www.redbubble.com/i/sticker/ID1" target="_blank">
-      <img src="ССЫЛКА_НА_КАРТИНКУ1" alt="Artwork 1">
-    </a>
-    <a href="https://www.redbubble.com/i/sticker/ID2" target="_blank">
-      <img src="ССЫЛКА_НА_КАРТИНКУ2" alt="Artwork 2">
-    </a>
+
+    <div class="gallery-item">
+      <a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank">
+        <img src="ССЫЛКА_НА_КАРТИНКУ1" alt="Artwork 1">
+      </a>
+      <span>Artwork 1</span>
+    </div>
+
+    <div class="gallery-item">
+      <a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank">
+        <img src="ССЫЛКА_НА_КАРТИНКУ2" alt="Artwork 2">
+      </a>
+      <span>Artwork 2</span>
+    </div>
+
+    <!-- Добавляй новые работы так же -->
   </div>
+</section>
+
+<!-- Секция с встроенным виджетом Redbubble -->
+<section>
+  <h2>Portfolio (Embedded Widget)</h2>
+  <div id="rb-portfolio-container"></div>
+
+  <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
+  <script id="rb-xzfcxvzx" type="text/javascript">
+    new RBExternalPortfolio('www.redbubble.com', 'cervezalunar', 2, 2)
+      .renderIframe(document.getElementById('rb-portfolio-container'));
+  </script>
 </section>
 
 <section>
