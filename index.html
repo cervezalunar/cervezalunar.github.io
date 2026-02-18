@@ -4,7 +4,25 @@
 <meta charset="UTF-8">
 <title>Cervezalunar</title>
 </head>
-<body style="background:#0e0e0e; color:white; text-align:center; font-family:Arial; padding:40px;">
+<style>
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 250px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+</style>
+
+  <body style="background:#0e0e0e; color:white; text-align:center; font-family:Arial; padding:40px;">
 
 <h1>CERVEZALUNAR</h1>
 <p>Digital Artist • Nature Photographer • Steampunk Worlds</p>
@@ -12,12 +30,18 @@
 
 <h2>Portfolio</h2>
 
-<iframe 
-src="https://www.redbubble.com/people/cervezalunar/shop"
-width="100%" 
-height="800"
-style="border:none;">
-</iframe>
+
+
+<div class="gallery">
+  <a href="https://www.redbubble.com/i/sticker/ID1" target="_blank">
+    <img src="ССЫЛКА_НА_КАРТИНКУ1" alt="Artwork 1">
+  </a>
+
+  <a href="https://www.redbubble.com/i/sticker/ID2" target="_blank">
+    <img src="ССЫЛКА_НА_КАРТИНКУ2" alt="Artwork 2">
+  </a>
+</div>
+
 
 <h2>Shop</h2>
 <a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank" style="color:#c9a227;">
