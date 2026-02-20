@@ -1,92 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CERVEZALUNAR</title>
-
-<style>
-body {
-  margin: 0;
-  background: #0e0e0e;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-h1 {
-  margin-top: 40px;
-  letter-spacing: 4px;
-}
-
-.gallery {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  padding: 40px;
-}
-
-.gallery img {
-  width: 250px;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.07);
-}
-
-.button {
-  display: inline-block;
-  padding: 15px 35px;
-  margin: 30px;
-  background: #9c2a27;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio and Shop</title>
 </head>
+<body style="font-family: Arial, sans-serif; background-color: #f5f5f5; text-align: center; padding: 20px;">
 
-<body>
+    <h1>My Works and Shop</h1>
 
-<h1>CERVEZALUNAR</h1>
-<p>Digital Artist • Nature Photographer • Steampunk Worlds</p>
+    <!-- Image Gallery -->
+    <div id="gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 40px;">
+        <img src="images/artwork1.jpg" alt="Artwork 1" style="max-width: 300px; border-radius: 10px;">
+        <img src="images/artwork2.jpg" alt="Artwork 2" style="max-width: 300px; border-radius: 10px;">
+        <img src="images/artwork3.jpg" alt="Artwork 3" style="max-width: 300px; border-radius: 10px;">
+        <!-- Добавляй новые картинки, просто помещая их в папку images и добавляя <img src="images/имя_файла.jpg"> -->
+    </div>
 
-<h2>Portfolio</h2>
-
-<div class="gallery" id="gallery">
-</div>
-
-<a class="button"
-href="https://www.redbubble.com/people/cervezalunar/shop"
-target="_blank">
-Visit My Redbubble Shop
-</a>
-
-<script>
-// Встроенный рабочий JS-скрипт
-const gallery = document.getElementById("gallery");
-
-const artworks = [
-  "https://www.redbubble.com/i/sweatshirt/Mechanics-of-feelings-by-Cervezalunar/178511770.E3041",
-  "https://www.redbubble.com/i/t-shirt/Mechanics-of-feelings-by-Cervezalunar/178511770.SWO0S",
-  "https://www.redbubble.com/i/t-shirt/lace-gears-steampunkbutterfly-by-Cervezalunar/178294009.EEZDA",
-  "https://www.redbubble.com/i/socks/lace-gears-steampunkbutterfly-by-Cervezalunar/178294009.9HZ1B"
-];
-
-artworks.forEach(src => {
-  const img = document.createElement("img");
-  img.src = src;
-  img.onclick = () => {
-    window.open("https://www.redbubble.com/people/cervezalunar/shop", "_blank");
-  };
-  gallery.appendChild(img);
-});
-</script>
+    <!-- Redbubble Shop -->
+    <h2>My Redbubble Shop</h2>
+    <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
+    <script id="rb-portfolio" type="text/javascript">
+        new RBExternalPortfolio('www.redbubble.com', 'cervezalunar', 2, 2).renderIframe();
+    </script>
 
 </body>
 </html>
