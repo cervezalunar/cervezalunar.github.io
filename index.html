@@ -2,78 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cervezalunar</title>
-
-<!-- Готический шрифт -->
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CERVEZALUNAR</title>
 
 <style>
 body {
-  background:#0e0e0e;
-  color:white;
-  text-align:center;
-  font-family:Arial, sans-serif;
-  padding:40px;
+  margin: 0;
+  background: #0e0e0e;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 h1 {
-  font-family: 'UnifrakturCook', cursive;
-  font-size: 60px;
-  color: #c9a227;
-  text-shadow: 0 0 10px #c9a227;
-}
-
-section {
-  margin-top: 50px;
+  margin-top: 40px;
+  letter-spacing: 4px;
 }
 
 .gallery {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 40px;
 }
 
-.gallery-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.gallery img {
   width: 250px;
-}
-
-.gallery-item img {
-  width: 100%;
-  max-width: 90vw;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #c9a227, 0 10px 30px rgba(255,255,255,0.1);
+.gallery img:hover {
+  transform: scale(1.07);
 }
 
-.gallery-item span {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #c9a227;
-}
-
-a {
-  color:#c9a227;
+.button {
+  display: inline-block;
+  padding: 15px 35px;
+  margin: 30px;
+  background: #9c2a27;
+  border-radius: 30px;
+  color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-#rb-portfolio-container {
-  margin-top: 30px;
+  font-weight: bold;
 }
 </style>
 </head>
@@ -83,48 +56,37 @@ a:hover {
 <h1>CERVEZALUNAR</h1>
 <p>Digital Artist • Nature Photographer • Steampunk Worlds</p>
 
-<!-- Секция с безопасной галереей -->
-<section>
-  <h2>Portfolio (Safe View)</h2>
-  <div class="gallery">
+<h2>Portfolio</h2>
 
-    <div class="gallery-item">
-      <a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank">
-        <img src="ССЫЛКА_НА_КАРТИНКУ1" alt="Artwork 1">
-      </a>
-      <span>Artwork 1</span>
-    </div>
+<div class="gallery" id="gallery">
+</div>
 
-    <div class="gallery-item">
-      <a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank">
-        <img src="ССЫЛКА_НА_КАРТИНКУ2" alt="Artwork 2">
-      </a>
-      <span>Artwork 2</span>
-    </div>
+<a class="button"
+href="https://www.redbubble.com/people/cervezalunar/shop"
+target="_blank">
+Visit My Redbubble Shop
+</a>
 
-    <!-- Добавляй новые работы так же -->
-  </div>
-</section>
+<script>
+// Встроенный рабочий JS-скрипт
+const gallery = document.getElementById("gallery");
 
-<!-- Секция с встроенным виджетом Redbubble -->
-<section>
-  <h2>Portfolio (Embedded Widget)</h2>
-  <div id="rb-portfolio-container"></div>
+const artworks = [
+  "https://via.placeholder.com/400x400.png?text=Artwork+1",
+  "https://via.placeholder.com/400x400.png?text=Artwork+2",
+  "https://via.placeholder.com/400x400.png?text=Artwork+3",
+  "https://via.placeholder.com/400x400.png?text=Artwork+4"
+];
 
-  <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
-  <script id="rb-xzfcxvzx" type="text/javascript">
-    new RBExternalPortfolio('www.redbubble.com', 'cervezalunar', 2, 2)
-      .renderIframe(document.getElementById('rb-portfolio-container'));
-  </script>
-</section>
-
-<section>
-  <h2>Shop</h2>
-  <a href="https://www.redbubble.com/people/cervezalunar/shop" target="_blank">
-    Visit My Redbubble Shop
-  </a>
-</section>
+artworks.forEach(src => {
+  const img = document.createElement("img");
+  img.src = src;
+  img.onclick = () => {
+    window.open("https://www.redbubble.com/people/cervezalunar/shop", "_blank");
+  };
+  gallery.appendChild(img);
+});
+</script>
 
 </body>
 </html>
-
